@@ -1,0 +1,18 @@
+<h2>Show dish</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @dish.name %>
+  </li>
+
+  <li>
+    <strong>Price:</strong>
+    <%= @dish.price %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: dish_path(@conn, :edit, @dish) %>
+<%= link "Back", to: dish_path(@conn, :index) %>

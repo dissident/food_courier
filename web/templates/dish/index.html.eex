@@ -1,0 +1,28 @@
+<h2>Listing dishes</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for dish <- @dishes do %>
+    <tr>
+      <td><%= dish.name %></td>
+      <td><%= dish.price %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: dish_path(@conn, :show, dish), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: dish_path(@conn, :edit, dish), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: dish_path(@conn, :delete, dish), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New dish", to: dish_path(@conn, :new) %>

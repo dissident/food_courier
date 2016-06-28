@@ -1,0 +1,6 @@
+<h2>Edit dish</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: dish_path(@conn, :update, @dish) %>
+
+<%= link "Back", to: dish_path(@conn, :index) %>
