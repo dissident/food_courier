@@ -21,6 +21,18 @@
           <ul class="nav nav-pills pull-right">
             <li><a href="/dishes">Dishes</a></li>
           </ul>
+          <%= if logged_in?(@conn) do %>
+            <ul class="nav nav-pills pull-right">
+              <li><%= link "Logout", to: session_path(@conn, :delete), method: :delete %></li>
+            </ul>
+          <% else %>
+            <ul class="nav nav-pills pull-right">
+              <li><%= link "Login",    to: "/login" %></li>
+            </ul>
+            <ul class="nav nav-pills pull-right">
+              <li><%= link "Register", to: registration_path(@conn, :new) %></li>
+            </ul>
+          <% end %>
         </nav>
         <span class="logo"></span>
       </header>

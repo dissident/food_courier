@@ -20,7 +20,7 @@ config :food_courier, FoodCourier.Endpoint,
       ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
       ~r{priv/gettext/.*(po)$},
       ~r{web/views/.*(ex)$},
-      ~r{web/templates/.*(eex)$}
+      ~r{web/templates/.*(eex|slim)$}
     ]
   ]
 
@@ -37,4 +37,6 @@ config :food_courier, FoodCourier.Repo,
   adapter: Ecto.Adapters.Postgres,
   database: "food_courier_dev",
   hostname: "localhost",
-  pool_size: 10
+  pool_size: 10,
+  username: "stas",
+  password: "1"
